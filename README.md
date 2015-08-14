@@ -1,9 +1,9 @@
 Java Wrapper for Cygwin
 ============
 
-## This is a simple wrapper that will add a `java` executable in `/usr/bin` in order to interecept java commands and convert any *NIX paths to windows paths for cygwin.
+**This is a simple wrapper that will add a `java` executable in `/usr/bin` in order to interecept java commands and convert any *NIX paths to windows paths for cygwin.**
 
-## This is **NOT** a helper to install java. You must already have java installed.
+**This is NOT a helper to install java. You must already have java installed.**
 
 ## Installation:
 ```
