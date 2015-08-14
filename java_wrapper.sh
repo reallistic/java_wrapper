@@ -41,7 +41,7 @@ fi
 # Default parameters
 JAVA_HOME=${JAVA_HOME:=}            # This is the home directory of Java development kit.
 RUN_JAVA_OPTS=${RUN_JAVA_OPTS:=}    # Java options (-Xmx512m -XX:MaxPermSize=128m etc)
-RUN_JAVA_DEBUG=${RUN_JAVA_DEBUG:=1} # If not empty, print the full java command line before executing it.
+RUN_JAVA_DEBUG=${RUN_JAVA_DEBUG:=} # If not empty, print the full java command line before executing it.
 RUN_JAVA_DRY=${RUN_JAVA_DRY:=}      # If not empty, do not exec Java command, but just print
 JAVA_CMD=${JAVA_CMD:=}              # Define where the java executable lives. (overrides JAVA_HOME)
 
@@ -68,7 +68,7 @@ if [ -z "$RUN_JAVA_NO_PARSE" ]; then
 
 	for ARG in "$@"; do
         # Make sure this is a unix path
-        if [[ $ARG == *"/"* ]] && [ -e "$ARG" ]; then
+        if [[ $ARG == *"/"* ]]; then
             NEW_ARGS[$IDX]=$(cygpath -mp "$ARG")
         else
             NEW_ARGS[$IDX]="$ARG"
