@@ -80,15 +80,6 @@ if [ -n "$JAVA_CMD" ]; then
     JAVA_CMD=$(readlink -f "$JAVA_CMD")
 fi
 
-echo -e "
-ADD_CMD:\t\t$ADD_CMD
-CURRENT_JAVA_CMD:\t$CURRENT_JAVA_CMD
-JAVA_CMD:\t\t$JAVA_CMD
-WRAPPER_DEST:\t\t$WRAPPER_DEST
-WRAPPER_DEST_DIR:\t$WRAPPER_DEST_DIR
-WRAPPER_LOC:\t\t$WRAPPER_LOC
-"
-
 if [ ! -x "$JAVA_CMD" ] && [ ! -x "$CURRENT_JAVA_CMD" ]; then
     echo "Java not installed. This is simply a wrapper it doesn't actually provide java!" 1>&2
     exit 1
